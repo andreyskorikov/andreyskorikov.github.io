@@ -8,8 +8,8 @@ document.addEventListener("click", function(e) {
     if (t >= 1627776000){n = 1;} else {n = 0;}
   
     if (a) {
-		sessionStorage.product = a;
-        sessionStorage.price = c[n].trim().split(" ")[0];
-		sessionStorage.currency = c[n].trim().split(" ")[1];
+		localStorage.product = a;
+        localStorage.price = c[n].trim().split(" ")[0];
+		localStorage.currency = c[n].trim().split(" ")[1];
     }
 });
