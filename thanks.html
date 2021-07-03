@@ -38,21 +38,30 @@
 								<script type="text/javascript">if((/bot|google|yandex|baidu|bing|msn|duckduckbot|teoma|slurp|crawler|spider|robot|crawling|facebook/i.test(navigator.userAgent))===false && typeof(sessionStorage)!='undefined' && sessionStorage.getItem('visited')!=='y'){	var style=document.createElement('style');	style.type='text/css';	style.innerHTML='@media screen and (min-width: 980px) {.t-records {opacity: 0;}.t-records_animated {-webkit-transition: opacity ease-in-out .2s;-moz-transition: opacity ease-in-out .2s;-o-transition: opacity ease-in-out .2s;transition: opacity ease-in-out .2s;}.t-records.t-records_visible {opacity: 1;}}';	document.getElementsByTagName('head')[0].appendChild(style);	$(document).ready(function() {	$('.t-records').addClass('t-records_animated');	setTimeout(function(){ $('.t-records').addClass('t-records_visible'); sessionStorage.setItem('visited','y');	},400);	});
 }</script>
 							</head>
+
 							
+							<body class="t-body" style="margin:0;">
+														
 							<!--GA Ecommerce Open-->
 							<script>
 							ga('require', 'ecommerce');
 							ga('ecommerce:addTransaction', {
-								  'id': '1234',                     // Transaction ID. Required.
-								  'affiliation': 'Acme Clothing',   // Affiliation or store name.
-								  'revenue': '11.99',               // Grand Total.
-								  'shipping': '5',                  // Shipping.
-								  'tax': '1.29'                     // Tax.
+								  'id': localStorage.transaction,                    // Transaction ID. Required.
+								  'revenue': localStorage.price,              		 // Grand Total.
+								  'currency': localStorage.currency    				// local currency code.
 								});
+								
+							ga('ecommerce:addItem', {
+								  'id': localStorage.transaction,                   // Transaction ID. Required.
+								  'name': localStorage.product,    					// Product name. Required.
+								  'price':  localStorage.price,            	        // Unit price.
+								  'currency': localStorage.currency  				// local currency code.
+								});
+							
+							ga('ecommerce:send');
 							</script>
 							<!--GA Ecommerce Close-->
 							
-							<body class="t-body" style="margin:0;">
 								<!--allrecords-->
 								<div id="allrecords" class="t-records" data-hook="blocks-collection-content-node" data-tilda-project-id="4103539" data-tilda-page-id="20409265" data-tilda-page-alias="thanks" data-tilda-formskey="6ad966ffd2a18d75c4197141bbcefa29" data-tilda-lazy="yes">
 									<div id="rec329566823" class="r t-rec" style=" " data-animationappear="off" data-record-type="456">
