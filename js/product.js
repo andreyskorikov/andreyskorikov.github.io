@@ -12,7 +12,7 @@ document.addEventListener("click", function(e) {
 	var rev = c[n].trim().split(" ")[0];
 	var ship = String((parseInt(rev) * 0.05).toFixed(2));
 	var tax = String((parseInt(rev) * 0.1).toFixed(2));
-	var price = String(parseInt(rev - ship - tax))
+	var price = String(parseInt(rev - ship - tax).toFixed(2))
 	
 	var trnx = ga.getAll()[0].get('clientId') + "-" + t.toString();
   
