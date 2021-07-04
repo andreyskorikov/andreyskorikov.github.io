@@ -12,7 +12,7 @@ document.addEventListener("click", function(e) {
 	var rev = c[n].trim().split(" ")[0];
 	var ship = String(parseInt(price) * 0.05);
 	var tax = String(parseInt(price) * 0.1);
-	var price = String(parseInt(rev - ship - tax))
+	var price = String(parseInt(rev) - parseInt(ship) - parseInt(tax))
 	
 	var trnx = ga.getAll()[0].get('clientId') + "-" + t.toString();
   
@@ -27,7 +27,7 @@ document.addEventListener("click", function(e) {
 		localStorage.sku = sku;
 		localStorage.category = cat;
 		localStorage.price = price;
-		localStorage.quantity = 1;
+		localStorage.quantity = "1";
 		
 		localStorage.currency = c[n].trim().split(" ")[1];
     }
