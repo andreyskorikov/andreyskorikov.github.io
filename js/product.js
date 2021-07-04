@@ -10,8 +10,8 @@ document.addEventListener("click", function(e) {
     if (t >= 1627776000){n = 1;} else {n = 0;}
 	
 	var rev = c[n].trim().split(" ")[0];
-	var ship = String(parseInt(rev) * 0.05);
-	var tax = String(parseInt(rev) * 0.1);
+	var ship = String(~~(parseInt(rev) * 0.05));
+	var tax = String(~~(parseInt(rev) * 0.1));
 	var price = String(parseInt(rev - ship - tax))
 	
 	var trnx = ga.getAll()[0].get('clientId') + "-" + t.toString();
