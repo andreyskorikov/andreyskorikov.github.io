@@ -28,7 +28,7 @@ document.addEventListener("click", function(e) {
 		localStorage.sku = sku;
 		localStorage.category = cat;
 		localStorage.price = price;
-		localStorage.quantity = "1";
+		localStorage.quantity = "3";
 		
 		localStorage.currency = c[n].trim().split(" ")[1];
     }
