@@ -5,7 +5,6 @@ document.addEventListener("click", function(e) {
 	var sku = b[0].offsetParent.className.split("_")[4]
 	var cat = b[0].parentElement.parentElement.parentElement.parentElement.parentElement.id
 	var quanty = b[0].querySelectorAll('#tickets')[0].value
-	console.log(quanty)
 	
     var n; 
     var t = ~~(Date.now() / 1000)
@@ -23,9 +22,9 @@ document.addEventListener("click", function(e) {
     if (a) {
 		localStorage.transaction = trnx || "";
 		localStorage.affiliation = "website";
-		localStorage.revenue = rev * quanty || "";
-		localStorage.shipping = ship || "";
-		localStorage.tax = tax || "";		
+		localStorage.revenue = rev * quanty || rev;
+		localStorage.shipping = ship * quanty || ship;
+		localStorage.tax = tax * quanty || tax;		
 		
 		localStorage.product = a || "";
 		localStorage.sku = sku || "";
