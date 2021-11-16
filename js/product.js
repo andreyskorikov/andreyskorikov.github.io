@@ -4,7 +4,7 @@ document.addEventListener("click", function(e) {
     var c = b[0].innerText.split("/")
 	var sku = b[0].offsetParent.className.split("_")[4]
 	var cat = b[0].parentElement.parentElement.parentElement.parentElement.parentElement.id
-	var quanty = b[0].querySelectorAll('#tickets').value
+	var quanty = b[0].querySelectorAll('#tickets')[0].value
 	console.log(quanty)
 	
     var n; 
@@ -31,7 +31,7 @@ document.addEventListener("click", function(e) {
 		localStorage.sku = sku || "";
 		localStorage.category = cat || "";
 		localStorage.price = price || "";
-		localStorage.quantity = quanty || "";
+		localStorage.quantity = quanty || 1;
 		
 		localStorage.currency = c[n].trim().split(" ")[1];
     }
