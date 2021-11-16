@@ -27,7 +27,7 @@ document.addEventListener("click", function(e) {
 		localStorage.tax = tax * quanty || tax;		
 		
 		localStorage.product = a || "";
-		localStorage.sku = sku + "-" + a || "";
+		localStorage.sku = sku || "";
 		localStorage.category = cat || "";
 		localStorage.price = price || "";
 		localStorage.quantity = quanty || 1;
