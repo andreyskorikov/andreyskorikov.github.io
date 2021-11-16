@@ -14,22 +14,22 @@ document.addEventListener("click", function(e) {
 	var ship = String((int_rev * 0.05).toFixed(2));
 	var tax = String((int_rev * 0.1).toFixed(2));
 	var price = String((int_rev - (int_rev * 0.05) - (int_rev * 0.1)).toFixed(2));
-	var quant
+	var quanty = document.getElementById('tickets').value
 	
 	var trnx = ga.getAll()[0].get('clientId') + "-" + t.toString();
   
     if (a) {
-		localStorage.transaction = trnx;
+		localStorage.transaction = trnx || "";
 		localStorage.affiliation = "website";
-		localStorage.revenue = rev;
-		localStorage.shipping = ship;
-		localStorage.tax = tax;		
+		localStorage.revenue = rev || "";
+		localStorage.shipping = ship || "";
+		localStorage.tax = tax || "";		
 		
-		localStorage.product = a;
-		localStorage.sku = sku;
-		localStorage.category = cat;
-		localStorage.price = price;
-		localStorage.quantity = "1";
+		localStorage.product = a || "";
+		localStorage.sku = sku || "";
+		localStorage.category = cat || "";
+		localStorage.price = price || "";
+		localStorage.quantity = quanty || "";
 		
 		localStorage.currency = c[n].trim().split(" ")[1];
     }
