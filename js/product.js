@@ -2,8 +2,10 @@ document.addEventListener("click", function(e) {
     var a = e.target.closest("a[href^='registration']").id;
     var b = document.getElementsByName(a);
     var c = b[0].innerText.split("/")
-	var sku = document.getElementsByName(a)[0].offsetParent.className.split("_")[4]
-	var cat = document.getElementsByName(a)[0].parentElement.parentElement.parentElement.parentElement.parentElement.id
+	var sku = b[0].offsetParent.className.split("_")[4]
+	var cat = b[0].parentElement.parentElement.parentElement.parentElement.parentElement.id
+	var quanty = b[0].querySelectorAll(#tickets)
+	console.log(quanty)
 	
     var n; 
     var t = ~~(Date.now() / 1000)
@@ -14,14 +16,14 @@ document.addEventListener("click", function(e) {
 	var ship = String((int_rev * 0.05).toFixed(2));
 	var tax = String((int_rev * 0.1).toFixed(2));
 	var price = String((int_rev - (int_rev * 0.05) - (int_rev * 0.1)).toFixed(2));
-	var quanty = document.getElementById('tickets').value
+
 	
 	var trnx = ga.getAll()[0].get('clientId') + "-" + t.toString();
   
     if (a) {
 		localStorage.transaction = trnx || "";
 		localStorage.affiliation = "website";
-		localStorage.revenue = rev || "";
+		localStorage.revenue = rev * quanty || "";
 		localStorage.shipping = ship || "";
 		localStorage.tax = tax || "";		
 		
