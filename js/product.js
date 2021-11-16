@@ -32,6 +32,7 @@ document.addEventListener("click", function(e) {
 		localStorage.price = price || "";
 		localStorage.quantity = quanty || 1;
 		
-		localStorage.currency = c[n].trim().split(" ")[1];
+		localStorage.currency = c[n].trim().split(" ")[1].substring(0, 3);
+		
     }
 });
