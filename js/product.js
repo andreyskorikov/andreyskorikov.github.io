@@ -4,7 +4,7 @@ document.addEventListener("click", function(e) {
     var c = b[0].innerText.split("/")
 	var sku = b[0].offsetParent.className.split("_")[4]
 	var cat = b[0].parentElement.parentElement.parentElement.parentElement.parentElement.id
-	var quanty = b[0].querySelectorAll(#tickets)
+	var quanty = b[0].querySelectorAll('#tickets')
 	console.log(quanty)
 	
     var n; 
